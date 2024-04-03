@@ -1,9 +1,10 @@
+import App from './app';
 import { render } from '@wordpress/element';
-import Catalog from './admin/catalog';
+import { BrowserRouter} from 'react-router-dom';
 
 /**
  * Import the stylesheet for the plugin.
  */
 //import './style/main.scss';
 // Render the App component into the DOM
-render( <Catalog />, document.getElementById( 'mvx-admin-catalog' ) );
+render(<BrowserRouter><App /></BrowserRouter>, document.getElementById('mvx-admin-catalog'));

@@ -1,0 +1,226 @@
+/*!*********************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/components/AdminLibrary/DynamicForm/dynamicForm.scss ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************/
+.mvx-tab-content .mvx-dynamic-form .mvx-form-group {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0.75rem 0;
+}
+.mvx-tab-content .mvx-dynamic-form .mvx-form-group .mvx-settings-form-label {
+  width: 28%;
+  color: #181718;
+  word-wrap: break-word;
+}
+.mvx-tab-content .mvx-dynamic-form .mvx-form-group .mvx-settings-form-label p {
+  font-size: 0.875rem;
+  color: #181718;
+}
+.mvx-tab-content .mvx-dynamic-form .mvx-form-group .mvx-settings-input-content {
+  width: 65%;
+  color: #5e5d60;
+}
+.mvx-tab-content .mvx-dynamic-form .mvx-form-group .mvx-settings-input-content .mvx-toggle-checkbox-content {
+  margin-left: auto;
+  position: relative;
+  margin-bottom: 0.625rem;
+}
+.mvx-tab-content .mvx-dynamic-form .mvx-form-group .mvx-settings-input-content .mvx-toggle-checkbox-content::after {
+  content: "";
+  position: absolute;
+  top: 0.55rem;
+  left: 2.3rem;
+  width: 0.25rem;
+  height: 0.25rem;
+  border: 0.0625rem solid #65438f;
+  border-radius: 8rem;
+  transition: 0.3s;
+  z-index: 0;
+}
+.mvx-tab-content .mvx-dynamic-form .mvx-form-group .mvx-settings-input-content .mvx-toggle-checkbox-content input {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+  display: none;
+}
+.mvx-tab-content .mvx-dynamic-form .mvx-form-group .mvx-settings-input-content .mvx-toggle-checkbox-content label {
+  cursor: pointer;
+  width: 3.3rem;
+  height: 1.5rem;
+  background: 0 0;
+  display: block;
+  border-radius: 8rem;
+  position: relative;
+  border: 0.125rem solid #d4d1d9;
+}
+.mvx-tab-content .mvx-dynamic-form .mvx-form-group .mvx-settings-input-content .mvx-toggle-checkbox-content label::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0.5rem;
+  width: 0.17rem;
+  height: 0.57rem;
+  background: #fdfdfe;
+  transition: 0.3s;
+}
+.mvx-tab-content .mvx-dynamic-form .mvx-form-group .mvx-settings-input-content .mvx-toggle-checkbox-content label::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0.313rem;
+  width: 0.875rem;
+  height: 0.875rem;
+  background: #65438f;
+  border-radius: 90rem;
+  transition: 0.3s;
+  z-index: 1;
+}
+.mvx-tab-content .mvx-dynamic-form .mvx-form-group .mvx-settings-input-content .mvx-toggle-checkbox-content input:checked + label {
+  background: #65438f;
+  border: 0.125rem solid #65438f;
+}
+.mvx-tab-content .mvx-dynamic-form .mvx-form-group .mvx-settings-input-content .mvx-toggle-checkbox-content input:checked + label:after {
+  left: calc(100% - 1.313rem);
+  transform: translateY(-50%);
+  background-color: #fdfdfe;
+}
+.mvx-tab-content .mvx-dynamic-form .mvx-form-group .mvx-settings-input-content input,
+.mvx-tab-content .mvx-dynamic-form .mvx-form-group .mvx-settings-input-content textarea {
+  width: 100%;
+  border: 0.063rem solid #d4d1d9;
+}
+.mvx-tab-content .mvx-dynamic-form .mvx-form-group .mvx-settings-metabox-description {
+  margin-top: 0.625rem;
+  font-style: italic;
+  font-size: 0.75rem;
+  color: #8e8b91;
+}
+.mvx-tab-content .mvx-setting-section-divider {
+  background-color: #f2eff5;
+  height: 0.05rem;
+  margin: 2rem 0;
+}
+@media only screen and (max-width: 48.321rem) {
+  .mvx-tab-content .mvx-dynamic-form .mvx-form-group .mvx-settings-form-label {
+    width: 100%;
+  }
+  .mvx-tab-content .mvx-dynamic-form .mvx-form-group .mvx-settings-input-content {
+    width: 100%;
+  }
+  .mvx-tab-content .mvx-setting-section-divider {
+    margin: 2rem 0;
+  }
+}
+/*!*******************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/components/AdminLibrary/Tabs/tabs.scss ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************/
+#admin-stockmanager .mvx-general-wrapper .mvx-container {
+  gap: 1.2rem;
+  background-color: #f2eff5;
+  padding: 2rem 1.5rem;
+  min-height: 54rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+}
+#admin-stockmanager .mvx-general-wrapper .mvx-container .mvx-middle-container-wrapper {
+  width: 100%;
+  min-width: 60%;
+}
+#admin-stockmanager .mvx-general-wrapper .mvx-container .mvx-middle-container-wrapper .mvx-tab-description-start {
+  text-align: center;
+  background-color: #f7f6f9;
+  border-radius: 0.25rem;
+  margin: 0 0 2rem;
+  border: 0.063rem solid #d4d1d9;
+  padding: 2rem;
+}
+#admin-stockmanager .mvx-general-wrapper .mvx-container .mvx-middle-container-wrapper .mvx-tab-description-start .mvx-tab-name {
+  color: #181718;
+  font-size: 1.25rem;
+  font-weight: 500;
+  padding-bottom: 0.5rem;
+}
+#admin-stockmanager .mvx-general-wrapper .mvx-container .mvx-middle-container-wrapper .mvx-middle-child-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: start;
+  flex-wrap: wrap;
+}
+#admin-stockmanager .mvx-general-wrapper .mvx-container .mvx-middle-container-wrapper .mvx-middle-child-container .mvx-current-tab-lists {
+  border-bottom: 0.06rem solid #d4d1d9;
+  margin-right: -0.06rem;
+  height: auto;
+  width: 30%;
+}
+#admin-stockmanager .mvx-general-wrapper .mvx-container .mvx-middle-container-wrapper .mvx-middle-child-container .mvx-current-tab-lists .active-current-tab {
+  position: relative;
+  background-color: #fdfdfe;
+}
+#admin-stockmanager .mvx-general-wrapper .mvx-container .mvx-middle-container-wrapper .mvx-middle-child-container .mvx-current-tab-lists a {
+  display: flex;
+  align-items: center;
+  background-color: #f9f8fb;
+  border: 0.063rem solid #d4d1d9;
+  border-bottom-width: 0.063rem;
+  border-bottom-style: solid;
+  border-bottom-color: #d4d1d9;
+  transition: 0.3s;
+  padding: 1rem 1.2rem;
+  margin-bottom: 0;
+  border-bottom: 0;
+  text-decoration: none;
+  color: #181718;
+  position: relative;
+  box-shadow: none;
+}
+#admin-stockmanager .mvx-general-wrapper .mvx-container .mvx-middle-container-wrapper .mvx-middle-child-container .mvx-current-tab-lists a i {
+  padding-right: 0.5rem;
+  color: #9f8ab9;
+  font-size: 1.15rem;
+}
+#admin-stockmanager .mvx-general-wrapper .mvx-container .mvx-middle-container-wrapper .mvx-middle-child-container .mvx-tab-content {
+  width: 70%;
+  padding: 2.5rem;
+  border: 0.063rem solid #d4d1d9;
+  height: auto;
+  min-height: 63rem;
+  background-color: #fdfdfe;
+  position: relative;
+}
+#admin-stockmanager .mvx-general-wrapper .mvx-notic-display-title {
+  background-color: #bf6290;
+  color: #fdfdfe;
+  padding: 0.5rem 1rem;
+  border-radius: 0.12rem;
+  position: fixed;
+  top: 15%;
+  right: 1rem;
+  z-index: 9999;
+}
+#admin-stockmanager .mvx-general-wrapper .mvx-notic-display-title i {
+  margin-right: 0.25rem;
+}
+
+@media only screen and (max-width: 48.321rem) {
+  #admin-stockmanager .mvx-general-wrapper .mvx-container .mvx-middle-container-wrapper .mvx-middle-child-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+  }
+  #admin-stockmanager .mvx-general-wrapper .mvx-container .mvx-middle-container-wrapper .mvx-middle-child-container .mvx-current-tab-lists {
+    width: 100%;
+  }
+  #admin-stockmanager .mvx-general-wrapper .mvx-container .mvx-middle-container-wrapper .mvx-middle-child-container .mvx-tab-content {
+    width: 100%;
+  }
+}
+
+/*# sourceMappingURL=index.css.map*/

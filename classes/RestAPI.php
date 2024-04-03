@@ -38,7 +38,6 @@ class RestAPI{
 
     public function mvx_catalog_fetch_admin_tabs() {
         $mvx_catalog_tabs_data = Utill::mvx_catalog_admin_tabs() ? : [];
-        // Utill::log(var_dump($mvx_catalog_tabs_data));
         return rest_ensure_response( $mvx_catalog_tabs_data );
 	}
 

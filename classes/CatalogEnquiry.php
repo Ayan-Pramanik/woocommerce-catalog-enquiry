@@ -124,7 +124,6 @@ class CatalogEnquiry {
         $this->container[ 'restapi' ]   = new RestAPI();
         $this->container[ 'template' ]   = new Template();
         $this->container[ 'utill']       = new Utill();
-        print_r(print_r(CE()->utill));
     }
     /**
      * Take action based on if woocommerce is not loaded

@@ -1,6 +1,6 @@
-/* global catalogappLocalizer */
+/* global appLocalizer */
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Link, json } from 'react-router-dom';
 import HeaderSection from './header';
 import BannerSection from './banner';
 import axios from 'axios';
@@ -36,8 +36,8 @@ export default class TabSection extends Component {
 			: query_name;
 		if ( this.props.subtab !== this.state.current_url ) {
 			axios( {
-				url: `${ catalogappLocalizer.apiUrl }/mvx_catalog/v1/fetch_admin_tabs`,
-				headers: { 'X-WP-Nonce' : catalogappLocalizer.nonce } 
+				url: `${ appLocalizer.apiUrl }/mvx_catalog/v1/fetch_admin_tabs`,
+				headers: { 'X-WP-Nonce' : appLocalizer.nonce } 
 			} ).then( ( response ) => {
 				this.setState( {
 					fetch_admin_tabs: response.data

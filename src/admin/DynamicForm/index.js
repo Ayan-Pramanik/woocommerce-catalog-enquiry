@@ -1,4 +1,4 @@
-/* global catalogappLocalizer */
+/* global appLocalizer */
 import React from 'react';
 import Select from 'react-select';
 import axios from 'axios';
@@ -397,32 +397,32 @@ export default class DynamicForm extends React.Component {
 		const tables_value = this.state.complete_own_details
 			? this.state.complete_own_details
 			: [];
-		var test_data = '';
-		if ( target === 'btn_size' ) {
-			test_data = e.target.value;
-		} else if ( target === 'font_size' ) {
-			test_data = e.target.value;
-		} else if ( target === 'border_radious' ) {
-			test_data = e.target.value;
-		} else if ( target === 'border_size' ) {
-			test_data = e.target.value + 'px';
-		} else if ( target === 'top_gradient_color' ) {
-			test_data = e.target.value;
-		} else if ( target === 'bottom_gradient_color' ) {
-			test_data = e.target.value;
-		} else if ( target === 'border_color' ) {
-			test_data = e.target.value;
-		} else if ( target === 'hover_background_color' ) {
-			test_data = e.target.value;
-		} else if ( target === 'text_color' ) {
-			test_data = e.target.value;
-		} else if ( target === 'hover_text_color' ) {
-			test_data = e.target.value;
-		} else if ( target === 'active_background_color' ) {
-			test_data = e.target.value;
-		} else if ( target === 'onmselect' ) {
-			test_data = e.target.value;
-		}
+		var test_data = e.target.value;
+		// if ( target === 'btn_size' ) {
+		// 	test_data = e.target.value;
+		// } else if ( target === 'font_size' ) {
+		// 	test_data = e.target.value;
+		// } else if ( target === 'border_radious' ) {
+		// 	test_data = e.target.value;
+		// } else if ( target === 'border_size' ) {
+		// 	test_data = e.target.value + 'px';
+		// } else if ( target === 'top_gradient_color' ) {
+		// 	test_data = e.target.value;
+		// } else if ( target === 'bottom_gradient_color' ) {
+		// 	test_data = e.target.value;
+		// } else if ( target === 'border_color' ) {
+		// 	test_data = e.target.value;
+		// } else if ( target === 'hover_background_color' ) {
+		// 	test_data = e.target.value;
+		// } else if ( target === 'text_color' ) {
+		// 	test_data = e.target.value;
+		// } else if ( target === 'hover_text_color' ) {
+		// 	test_data = e.target.value;
+		// } else if ( target === 'active_background_color' ) {
+		// 	test_data = e.target.value;
+		// } else if ( target === 'onmselect' ) {
+		// 	test_data = e.target.value;
+		// }
 
 		tables_value[ target ] = test_data;
 		if ( Object.entries( tables_value ) ) {

@@ -1,9 +1,9 @@
-/* global catalogappLocalizer */
+/* global appLocalizer */
 import React, { Component } from 'react';
 import { render } from 'react-dom';
 import { BrowserRouter as Router, useLocation } from 'react-router-dom';
 import MvxTab from './tabs';
-import Banner7 from '../../../woocommerce-catalog-enquiry-pro/src/index';
+import Banner7 from '../../../product-catalog-enquiry-pro/src/index';
 
 class Catalog_Backend_Endpoints_Load extends Component {
 	constructor( props ) {

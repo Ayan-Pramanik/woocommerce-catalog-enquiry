@@ -473,15 +473,15 @@ class Utill {
                         ),
                         'database_value' => array(),
                     ],
-                    // [
-                    //     'key'       => 'custom_own_button_style',
-                    //     'depend_checkbox'    => 'is_button',
-                    //     'type'      => 'own_button',
-                    //     'class'     =>  'mvx-setting-own-class',
-                    //     'desc'      => __('', 'woocommerce-catalog-enquiry'),
-                    //     'label'     => __( 'Make your own Button Style', 'woocommerce-catalog-enquiry' ),
-                    //     'database_value' => '',
-                    // ],
+                    [
+                        'key'       => 'custom_own_button_style',
+                        'depend_checkbox'    => 'is_button',
+                        'type'      => 'own_button',
+                        'class'     =>  'mvx-setting-own-class',
+                        'desc'      => __('', 'woocommerce-catalog-enquiry'),
+                        'label'     => __( 'Make your own Button Style', 'woocommerce-catalog-enquiry' ),
+                        'database_value' => '',
+                    ],
                     [
                         'key'       =>  'woocommerce_catalog_enquiry_button_settings',
                         'type'      =>  'blocktext',
@@ -834,7 +834,7 @@ class Utill {
                         if (!empty($database_value)) {
                             if (isset($inter_value['key']) && array_key_exists($inter_value['key'], $database_value)) {
                                 if (empty($inter_value['database_value'])) {
-                                   $catalog_settings_page_endpoint[$settings_key]['modulename'][$inter_key]['database_value'] = $database_value[$inter_value['key']];
+                                    $catalog_settings_page_endpoint[$settings_key]['modulename'][$inter_key]['database_value'] = $database_value[$inter_value['key']];
                                 }
                             }
                         }
@@ -842,11 +842,11 @@ class Utill {
                 }
             }
         }
-    
+        
         $mvx_catalog_backend_tab_list = apply_filters('mvx_catalog_tab_list', array(
             'catalog-settings'      => $catalog_settings_page_endpoint,
         ));
-    
+        Utill::log($mvx_catalog_backend_tab_list);
         return $mvx_catalog_backend_tab_list;
     }
 }
