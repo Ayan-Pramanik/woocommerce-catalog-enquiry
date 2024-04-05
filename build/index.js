@@ -7784,8 +7784,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/dist/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/dist/index.js");
 /* harmony import */ var _components_Settings_Settings__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/Settings/Settings */ "./src/components/Settings/Settings.jsx");
+/* harmony import */ var _components_Modules_Modules__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/Modules/Modules */ "./src/components/Modules/Modules.jsx");
+
 
 
 
@@ -7798,10 +7800,10 @@ const App = () => {
       element.parentNode.classList.add('current');
     }
   });
-  const location = new URLSearchParams((0,react_router_dom__WEBPACK_IMPORTED_MODULE_3__.useLocation)().hash);
+  const location = new URLSearchParams((0,react_router_dom__WEBPACK_IMPORTED_MODULE_4__.useLocation)().hash);
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, location.get('tab') === 'settings' && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_Settings_Settings__WEBPACK_IMPORTED_MODULE_2__["default"], {
     initialTab: "storeDisplay"
-  }));
+  }), location.get('tab') === 'modules' && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_Modules_Modules__WEBPACK_IMPORTED_MODULE_3__["default"], null));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (App);
 
@@ -8979,6 +8981,34 @@ const ToggleRectangle = props => {
 
 /***/ }),
 
+/***/ "./src/components/AdminLibrary/Inputs/Util/BlockText.jsx":
+/*!***************************************************************!*\
+  !*** ./src/components/AdminLibrary/Inputs/Util/BlockText.jsx ***!
+  \***************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+
+const BlockText = props => {
+  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: props.wrapperClass
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+    className: props.blockTextClass,
+    dangerouslySetInnerHTML: {
+      __html: props.value
+    }
+  })));
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (BlockText);
+
+/***/ }),
+
 /***/ "./src/components/AdminLibrary/Inputs/index.js":
 /*!*****************************************************!*\
   !*** ./src/components/AdminLibrary/Inputs/index.js ***!
@@ -9001,6 +9031,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _SelectInput_jsx__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./SelectInput.jsx */ "./src/components/AdminLibrary/Inputs/SelectInput.jsx");
 /* harmony import */ var _TextArea_jsx__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./TextArea.jsx */ "./src/components/AdminLibrary/Inputs/TextArea.jsx");
 /* harmony import */ var _ToggleRectangle_jsx__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./ToggleRectangle.jsx */ "./src/components/AdminLibrary/Inputs/ToggleRectangle.jsx");
+/* harmony import */ var _Util_BlockText_jsx__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./Util/BlockText.jsx */ "./src/components/AdminLibrary/Inputs/Util/BlockText.jsx");
 // Normal input component import
 
 // import CalendarInput from './CalendarInput.jsx';
@@ -9016,7 +9047,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 // Util component import
-// import BlockText from './Util/BlockText.jsx';
+
 // import GoogleMap from './Util/GoogleMap.jsx';
 // import Label from './Util/Label.jsx';
 // import Section from './Util/Section.jsx';
@@ -9037,8 +9068,8 @@ __webpack_require__.r(__webpack_exports__);
   Recaptcha: _Recaptcha_jsx__WEBPACK_IMPORTED_MODULE_7__["default"],
   SelectInput: _SelectInput_jsx__WEBPACK_IMPORTED_MODULE_8__["default"],
   TextArea: _TextArea_jsx__WEBPACK_IMPORTED_MODULE_9__["default"],
-  ToggleRectangle: _ToggleRectangle_jsx__WEBPACK_IMPORTED_MODULE_10__["default"]
-  // BlockText,
+  ToggleRectangle: _ToggleRectangle_jsx__WEBPACK_IMPORTED_MODULE_10__["default"],
+  BlockText: _Util_BlockText_jsx__WEBPACK_IMPORTED_MODULE_11__["default"]
   // GoogleMap,
   // Label,
   // Section,
@@ -9127,6 +9158,119 @@ const Tabs = props => {
 
 /***/ }),
 
+/***/ "./src/components/Modules/Modules.jsx":
+/*!********************************************!*\
+  !*** ./src/components/Modules/Modules.jsx ***!
+  \********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _template_modules_modules__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../template/modules/modules */ "./src/template/modules/modules.js");
+
+
+
+
+
+function Modules() {
+  const [module, setModule] = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)(_template_modules_modules__WEBPACK_IMPORTED_MODULE_4__["default"]);
+  const activateModuleUrl = `${appLocalizer.apiUrl}/mvx_catalog/v1/activate_module`;
+  const handleOnChange = (event, id) => {
+    let value = event.target.checked;
+    axios__WEBPACK_IMPORTED_MODULE_1___default()({
+      method: "post",
+      url: activateModuleUrl,
+      headers: {
+        "X-WP-Nonce": appLocalizer.nonce
+      },
+      data: {
+        module_id: id,
+        value: event.target.checked
+      }
+    });
+    setModule(prevData => {
+      return prevData.map(obj => {
+        if (obj.id === id) {
+          return {
+            ...obj,
+            'is_active': value
+          };
+        }
+        return obj;
+      });
+    });
+  };
+  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    class: "mvx-container"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "mvx-tab-description-start"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "mvx-tab-name"
+  }, "Modules"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, "Customize your marketplace site by enabling the module that you prefer")), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "mvx-module-option-row"
+  }, module?.map((module, index) => (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "mvx-module-section-options-list"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: `mvx-module-settings-box ${module.is_active ? 'active' : ''}`
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "mvx-module-icon"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("i", {
+    className: `mvx-font ${module.thumbnail_dir}`
+  })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("header", null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "mvx-module-list-label-text"
+  }, module.name, " ", module.plan === 'pro' ? (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    class: "stock-manager-pro-tag"
+  }, "Pro") : ''), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, " ", module.description, " ")), module.required_plugin_list ? (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "mvx-module-require-name"
+  }, " ", (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Requires:', 'woocommerce-catalog-enquiry'), " ") : '', (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("ul", null, module.required_plugin_list && module.required_plugin_list.map((required_plugin, index_req) => (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("li", null, required_plugin.is_active ? (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "mvx-module-active-plugin-class"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "mvx-font icon-yes"
+  })) : (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "inactive-plugin-class"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "mvx-font icon-no"
+  })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
+    href: required_plugin.plugin_link,
+    className: "mvx-third-party-plugin-link-class"
+  }, required_plugin.plugin_name)))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "mvx-module-current-status"
+  }, module.is_active && module.setting_link ? (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
+    href: module.setting_link,
+    className: "mvx-btn btn-border"
+  }, " ", (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Settings', 'woocommerce-catalog-enquiry'), " ") : '', module.doc_link ? (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
+    target: "_blank",
+    href: module.doc_link,
+    className: "mvx-btn btn-border"
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('DOC', 'woocommerce-catalog-enquiry')) : '', (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: `mvx-toggle-checkbox-content ${module.plan && module.plan == 'pro' ? 'disabled' : ''}`
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("input", {
+    type: "checkbox",
+    className: "mvx-toggle-checkbox",
+    id: `mvx-toggle-switch-${module.id}`,
+    name: "modules[]",
+    value: module.id,
+    checked: module.is_active ? true : false,
+    onChange: e => handleOnChange(e, module.id)
+  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", {
+    htmlFor: `mvx-toggle-switch-${module.id}`
+  }))))))));
+}
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Modules);
+
+/***/ }),
+
 /***/ "./src/components/Settings/Settings.jsx":
 /*!**********************************************!*\
   !*** ./src/components/Settings/Settings.jsx ***!
@@ -9154,7 +9298,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-// import BannerSection from '../Banner/banner';
+// import BannerSection from '../Banner/Banner';
 
 // import context
 
@@ -9181,9 +9325,10 @@ const Settings = () => {
       setSetting
     } = (0,_contexts_SettingContext__WEBPACK_IMPORTED_MODULE_3__.useSetting)();
     const settingModal = (0,_utiles_settingUtil__WEBPACK_IMPORTED_MODULE_5__.getSettingById)(settingsArray, currentTab);
-    console.log(settingsArray);
-    console.log(currentTab);
-    console.log(settingModal);
+
+    // console.log(settingsArray)
+    // console.log(currentTab)
+    // console.log(settingModal)
 
     // if ( settingName != currentTab ) {
     //     setSetting( currentTab, appLocalizer.settings_databases_value[currentTab] );
@@ -9193,10 +9338,10 @@ const Settings = () => {
     //     appLocalizer.settings_databases_value[settingName] = setting;
     // }, [setting]);
 
-    return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, settingName === currentTab ? (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_AdminLibrary_DynamicForm_DynamicForm__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_AdminLibrary_DynamicForm_DynamicForm__WEBPACK_IMPORTED_MODULE_1__["default"], {
       setting: settingModal,
       proSetting: appLocalizer.pro_settings_list
-    }) : (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, "Loading"));
+    }));
   };
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_contexts_SettingContext__WEBPACK_IMPORTED_MODULE_3__.SettingProvider, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_AdminLibrary_Tabs_Tabs__WEBPACK_IMPORTED_MODULE_2__["default"], {
     tabData: settingsArray,
@@ -9452,6 +9597,103 @@ const getTemplateData = () => {
 
 /***/ }),
 
+/***/ "./src/template/modules/modules.js":
+/*!*****************************************!*\
+  !*** ./src/template/modules/modules.js ***!
+  \*****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__);
+
+const modules = [{
+  "id": "catalog",
+  "name": "Catalog",
+  "description": "Covers the vast majority of any tangible products you may sell or ship i.e books",
+  "plan": "free",
+  "doc_link": "https://multivendorx.com/docs/knowladgebase/simple-product",
+  "parent_category": "Marketplace Types.",
+  "is_active": appLocalizer.active_modules.includes('catalog'),
+  "thumbnail_dir": "catalog",
+  "active_status": false,
+  "setting_link": "http://localhost/secure/wp-admin/admin.php?page=mvx#&submenu=settings&name=settings-store-inventory"
+}, {
+  "id": "enquiries",
+  "name": "Enquiries",
+  "description": "A product with variations, like different SKU, price, stock option, etc.",
+  "plan": "free",
+  "required_plugin_list": [{
+    "plugin_name": "MultivendorX Pro",
+    "plugin_link": "https://multivendorx.com/pricing",
+    "is_active": true
+  }],
+  "doc_link": "https://multivendorx.com/docs/knowladgebase/variable-product",
+  "is_active": appLocalizer.active_modules.includes('enquiries'),
+  "thumbnail_dir": "module-variable",
+  "active_status": false
+}, {
+  "id": "quote",
+  "name": "Request Quote",
+  "description": "Grants vendor the option to  list and describe on admin website but sold elsewhere",
+  "plan": "pro",
+  // "required_plugin_list": [
+  //     {
+  //         "plugin_name": "MultivendorX Pro",
+  //         "plugin_link": "https://multivendorx.com/pricing",
+  //         "is_active": false
+  //     }
+  // ],
+  "doc_link": "https://multivendorx.com/docs/knowledgebase/external-product/",
+  "is_active": appLocalizer.active_modules.includes('quote'),
+  "thumbnail_dir": "module-external",
+  "active_status": false
+}, {
+  "id": "mailchimp",
+  "name": "Mailchimp",
+  "description": "A cluster of simple related products that can be purchased individually",
+  "plan": "free",
+  // "required_plugin_list": [
+  //     {
+  //         "plugin_name": "MultivendorX Pro",
+  //         "plugin_link": "https://multivendorx.com/",
+  //         "is_active": false
+  //     }
+  // ],
+  "doc_link": "https://multivendorx.com/docs/knowladgebase/grouped-product",
+  "is_active": appLocalizer.active_modules.includes('mailchimp'),
+  "thumbnail_dir": "module-grouped",
+  "active_status": false
+}, {
+  "id": "multivendorx",
+  "name": "MultiVendorX",
+  "description": "Allow customers to book appointments, make reservations or rent equipment etc",
+  "plan": "free",
+  // "required_plugin_list": [
+  //     {
+  //         "plugin_name": "WooCommerce Booking",
+  //         "plugin_link": "https://multivendorx.com/docs/knowladgebase/appointment-product/",
+  //         "is_active": false
+  //     },
+  //     {
+  //         "plugin_name": "MultivendorX Pro",
+  //         "plugin_link": "https://multivendorx.com/",
+  //         "is_active": false
+  //     }
+  // ],
+  "doc_link": "https://multivendorx.com/docs/knowladgebase/booking-product",
+  "is_active": appLocalizer.active_modules.includes('multivendorx'),
+  "thumbnail_dir": "module-booking",
+  "active_status": false
+}];
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (modules);
+
+/***/ }),
+
 /***/ "./src/template/settings/buttonAppearance.js":
 /*!***************************************************!*\
   !*** ./src/template/settings/buttonAppearance.js ***!
@@ -9687,45 +9929,14 @@ __webpack_require__.r(__webpack_exports__);
   icon: 'icon-general-tab',
   submenu: 'settings',
   apiurl: 'save_enquiry',
-  modulename: [{
-    key: 'woocommerce_catalog_enquiry_general_settings',
-    type: 'blocktext',
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('no_label', 'woocommerce-catalog-enquiry'),
-    blocktext: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Common Settings', 'woocommerce-catalog-enquiry')
-  }, {
-    key: 'is_enable',
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Catalog Mode', 'woocommerce-catalog-enquiry'),
-    class: 'mvx-toggle-checkbox',
-    type: 'checkbox',
-    options: [{
-      key: 'is_enable',
-      // label: apply_filters('woocommerce_catalog_enquiry_enable_catalog_text', __('Enable this to activate catalog mode sitewide. This will remove your Add to Cart button. To keep Add to Cart button in your site, upgrade to <a href="https://multivendorx.com/woocommerce-request-a-quote-product-catalog/" target="_blank">WooCommerce Catalog Enquiry Pro</a>.', 'woocommerce-catalog-enquiry')),
-      value: 'is_enable'
-    }],
-    database_value: []
-  }, {
-    key: 'is_enable_enquiry',
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Product Enquiry Button', 'woocommerce-catalog-enquiry'),
-    class: 'mvx-toggle-checkbox',
-    type: 'checkbox',
-    options: [{
-      key: 'is_enable_enquiry',
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Enable this to add the Enquiry button for all products. Use Exclusion settings to exclude specific product or category from enquiry.', 'woocommerce-catalog-enquiry'),
-      value: 'is_enable_enquiry'
-    }],
-    database_value: []
-  }, {
-    key: 'is_enable_out_of_stock',
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Product Enquiry Button When Product is Out Of Stock', 'woocommerce-catalog-enquiry'),
-    class: 'mvx-toggle-checkbox',
-    type: 'checkbox',
-    options: [{
-      key: 'is_enable_out_of_stock',
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Enable this to add the Enquiry button for the products which are out of stock. Use Exclusion settings to exclude specific product or category from enquiry.', 'woocommerce-catalog-enquiry'),
-      value: 'is_enable_out_of_stock'
-    }],
-    database_value: []
-  }, {
+  modal: [
+  // {
+  //     key: 'woocommerce_catalog_enquiry_general_settings',
+  //     type: 'blocktext',
+  //     label: __('no_label', 'woocommerce-catalog-enquiry'),
+  //     blocktext: __('Common Settings', 'woocommerce-catalog-enquiry'),
+  // },
+  {
     key: 'for_user_type',
     type: 'select',
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Catalog Mode Applicable For', 'woocommerce-catalog-enquiry'),
@@ -9750,92 +9961,112 @@ __webpack_require__.r(__webpack_exports__);
     type: 'checkbox',
     options: [{
       key: 'is_hide_cart_checkout',
-      // label: apply_filters('woocommerce_catalog_enquiry_hide_cart', __('Enable this to redirect users to the home page if they click on the cart or checkout page. To set the redirection to another page, kindly upgrade to <a href="https://multivendorx.com/woocommerce-request-a-quote-product-catalog/" target="_blank">WooCommerce Catalog Enquiry Pro</a>.', 'woocommerce-catalog-enquiry')),
+      label: appLocalizer.disable_cart_label,
       value: 'is_hide_cart_checkout'
-    }],
-    database_value: []
+    }]
   }, {
-    key: 'disable_cart_page_link',
-    depend_checkbox: 'is_hide_cart_checkout',
-    // disable: apply_filters('mvx_catalog_free_only_active', true),
-    type: 'select',
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Set Redirect Page', 'woocommerce-catalog-enquiry'),
-    // desc: apply_filters('woocommerce_catalog_redirect_disabled_cart_page', __('Select the page where users will be redirected for the disabled cart page. To use this feature, kindly upgrade to <a href="https://multivendorx.com/woocommerce-request-a-quote-product-catalog/" target="_blank">WooCommerce Catalog Enquiry Pro</a>.', 'woocommerce-catalog-enquiry')),
-    options: appLocalizer.all_pages
-  }, {
-    key: 'is_page_redirect',
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Redirect after Enquiry form Submission', 'woocommerce-catalog-enquiry'),
-    class: 'mvx-toggle-checkbox',
-    type: 'checkbox',
-    options: [{
-      key: 'is_page_redirect',
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Enable this to redirect users to another page after successful enquiry submission.', 'woocommerce-catalog-enquiry'),
-      value: 'is_page_redirect'
-    }],
-    database_value: []
-  }, {
-    key: 'redirect_page_id',
-    depend_checkbox: 'is_page_redirect',
-    type: 'select',
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Set Redirect Page', 'woocommerce-catalog-enquiry'),
-    desc: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Select the page where users will be redirected after successful enquiry.', 'woocommerce-catalog-enquiry'),
-    options: appLocalizer.all_pages
-  }, {
-    key: 'separator1_content',
-    type: 'section',
-    label: ''
-  }, {
-    key: 'woocommerce_catalog_enquiry_display_settings',
+    key: 'woocommerce_catalog_enquiry_general_settings',
     type: 'blocktext',
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('no_label', 'woocommerce-catalog-enquiry'),
-    blocktext: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Display Options', 'woocommerce-catalog-enquiry')
+    blocktext: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Catalog Page Design', 'woocommerce-catalog-enquiry')
   }, {
-    key: 'is_remove_price_free',
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Remove Product Price?', 'woocommerce-catalog-enquiry'),
+    key: 'is_catalog_page_customization',
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Enable Customization for Catalog Page ?', 'woocommerce-catalog-enquiry'),
     class: 'mvx-toggle-checkbox',
     type: 'checkbox',
     options: [{
-      key: 'is_remove_price_free',
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Enable this option to remove the product price display from the site.', 'woocommerce-catalog-enquiry'),
-      value: 'is_remove_price_free'
-    }],
-    database_value: []
+      key: 'is_catalog_page_customization',
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Enable this to customize your Catalog Page', 'woocommerce-catalog-enquiry'),
+      value: 'is_catalog_page_customization'
+    }]
   }, {
-    key: 'is_disable_popup',
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Disable Enquiry form via popup?', 'woocommerce-catalog-enquiry'),
-    class: 'mvx-toggle-checkbox',
-    type: 'checkbox',
+    key: 'in_description_box',
+    type: 'textarea',
+    desc: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('This content will be displayed in description box.', 'woocommerce-catalog-enquiry'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Description box text', 'woocommerce-catalog-enquiry')
+  }, {
+    key: 'for_description_box_position',
+    type: 'select',
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Description Box Position', 'woocommerce-catalog-enquiry'),
+    desc: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Select the position where the description box will be shown', 'woocommerce-catalog-enquiry'),
     options: [{
-      key: 'is_disable_popup',
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('By default, the form will be displayed via popup. Enable this if you want to display the form below the product description.', 'woocommerce-catalog-enquiry'),
-      value: 'is_disable_popup'
-    }],
-    database_value: []
+      key: '1',
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Above Product Description', 'woocommerce-catalog-enquiry'),
+      value: 'above'
+    }, {
+      key: '2',
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Replace', 'woocommerce-catalog-enquiry'),
+      value: 'replace'
+    }, {
+      key: '3',
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Below Product Description', 'woocommerce-catalog-enquiry'),
+      value: 'below'
+    }]
   }, {
-    key: 'separator2_content',
-    type: 'section',
-    label: ''
-  }, {
-    key: 'woocommerce_catalog_enquiry_email_settings',
+    key: 'for_description_box',
+    type: 'select',
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Button display Position', 'woocommerce-catalog-enquiry'),
+    desc: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Select the position where the button will be shown', 'woocommerce-catalog-enquiry'),
+    options: [{
+      key: '1',
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Below Description', 'woocommerce-catalog-enquiry'),
+      value: 'above'
+    }, {
+      key: '2',
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Above Add to Cart', 'woocommerce-catalog-enquiry'),
+      value: 'replace'
+    }, {
+      key: '3',
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Above Add to Cart', 'woocommerce-catalog-enquiry'),
+      value: 'below'
+    }, {
+      key: '3',
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Above Add to Cart', 'woocommerce-catalog-enquiry'),
+      value: 'below'
+    }]
+  }]
+});
+
+/***/ }),
+
+/***/ "./src/template/settings/enquiry.js":
+/*!******************************************!*\
+  !*** ./src/template/settings/enquiry.js ***!
+  \******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__);
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  id: 'enquiry',
+  priority: 3,
+  name: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Enquiry', 'woocommerce-catalog-enquiry'),
+  desc: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Configure basic store display settings to operate your catalog marketplace.', 'woocommerce-catalog-enquiry'),
+  icon: 'icon-general-tab',
+  submenu: 'settings',
+  submitUrl: 'save_enquiry',
+  proDependent: false,
+  modal: [{
+    key: 'woocommerce_catalog_enquiry_general_settings',
     type: 'blocktext',
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('no_label', 'woocommerce-catalog-enquiry'),
-    blocktext: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Enquiry Email Receivers Settings', 'woocommerce-catalog-enquiry')
+    blocktext: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Common Settings', 'woocommerce-catalog-enquiry')
   }, {
-    key: 'other_emails',
-    type: 'text',
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Additional Recipients Emails', 'woocommerce-catalog-enquiry'),
-    desc: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Enter email addresses if you want to receive enquiry mail along with admin mail. You can add multiple comma-separated emails. Default: Admin emails.', 'woocommerce-catalog-enquiry')
-  }, {
-    key: 'is_other_admin_mail',
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Remove admin email', 'woocommerce-catalog-enquiry'),
+    key: 'is_enable',
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Catalog Mode', 'woocommerce-catalog-enquiry'),
     class: 'mvx-toggle-checkbox',
     type: 'checkbox',
     options: [{
-      key: 'is_other_admin_mail',
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Enable this if you want to remove admin email from receiver list.', 'woocommerce-catalog-enquiry'),
-      value: 'is_other_admin_mail'
-    }],
-    database_value: []
+      key: 'is_enable',
+      label: appLocalizer.catalog_mode_label,
+      value: 'is_enable'
+    }]
   }]
 });
 
@@ -10001,13 +10232,13 @@ __webpack_require__.r(__webpack_exports__);
 //             label: __('no_label', 'woocommerce-catalog-enquiry'),
 //             blocktext: __('Exclusion Management', 'woocommerce-catalog-enquiry'),
 //         },
-//         {
-//             key: 'woocommerce_userroles_list',
-//             type: 'multi-select',
-//             label: __('User Role Specific Exclusion', 'woocommerce-catalog-enquiry'),
-//             desc: __('Select the user roles, who won’t be able to send enquiry.', 'woocommerce-catalog-enquiry'),
-//             options: appLocalizer.all_roles, 
-//         },
+// {
+//     key: 'woocommerce_userroles_list',
+//     type: 'multi-select',
+//     label: __('User Role Specific Exclusion', 'woocommerce-catalog-enquiry'),
+//     desc: __('Select the user roles, who won’t be able to send enquiry.', 'woocommerce-catalog-enquiry'),
+//     options: appLocalizer.all_roles, 
+// },
 //         {
 //             key: 'woocommerce_user_list',
 //             type: 'multi-select',
@@ -10098,43 +10329,43 @@ __webpack_require__.r(__webpack_exports__);
 //                 ],
 //                 database_value: []
 //             },
-//             {
-//                 key: 'for_user_type',
-//                 type: 'select',
-//                 label: __('Catalog Mode Applicable For', 'woocommerce-catalog-enquiry'),
-//                 desc: __('Select the type users where this catalog is applicable', 'woocommerce-catalog-enquiry'),
-//                 options: [
-//                     {
-//                         key: '1',
-//                         label: __('Only Logged out Users', 'woocommerce-catalog-enquiry'),
-//                         value: '1',
-//                     },
-//                     {
-//                         key: '2',
-//                         label: __('Only Logged in Users', 'woocommerce-catalog-enquiry'),
-//                         value: '2',
-//                     },
-//                     {
-//                         key: '3',
-//                         label: __('All Users', 'woocommerce-catalog-enquiry'),
-//                         value: '3',
-//                     }
-//                 ],
-//             },
-//             {
-//                 key: 'is_hide_cart_checkout',
-//                 label: __('Disable Cart and Checkout Page?', 'woocommerce-catalog-enquiry'),
-//                 class: 'mvx-toggle-checkbox',
-//                 type: 'checkbox',
-//                 options: [
-//                     {
-//                         key: 'is_hide_cart_checkout',
-//                         // label: apply_filters('woocommerce_catalog_enquiry_hide_cart', __('Enable this to redirect users to the home page if they click on the cart or checkout page. To set the redirection to another page, kindly upgrade to <a href="https://multivendorx.com/woocommerce-request-a-quote-product-catalog/" target="_blank">WooCommerce Catalog Enquiry Pro</a>.', 'woocommerce-catalog-enquiry')),
-//                         value: 'is_hide_cart_checkout'
-//                     },
-//                 ],
-//                 database_value: [],
-//             },
+// {
+//     key: 'for_user_type',
+//     type: 'select',
+//     label: __('Catalog Mode Applicable For', 'woocommerce-catalog-enquiry'),
+//     desc: __('Select the type users where this catalog is applicable', 'woocommerce-catalog-enquiry'),
+//     options: [
+//         {
+//             key: '1',
+//             label: __('Only Logged out Users', 'woocommerce-catalog-enquiry'),
+//             value: '1',
+//         },
+//         {
+//             key: '2',
+//             label: __('Only Logged in Users', 'woocommerce-catalog-enquiry'),
+//             value: '2',
+//         },
+//         {
+//             key: '3',
+//             label: __('All Users', 'woocommerce-catalog-enquiry'),
+//             value: '3',
+//         }
+//     ],
+// },
+// {
+//     key: 'is_hide_cart_checkout',
+//     label: __('Disable Cart and Checkout Page?', 'woocommerce-catalog-enquiry'),
+//     class: 'mvx-toggle-checkbox',
+//     type: 'checkbox',
+//     options: [
+//         {
+//             key: 'is_hide_cart_checkout',
+//             // label: apply_filters('woocommerce_catalog_enquiry_hide_cart', __('Enable this to redirect users to the home page if they click on the cart or checkout page. To set the redirection to another page, kindly upgrade to <a href="https://multivendorx.com/woocommerce-request-a-quote-product-catalog/" target="_blank">WooCommerce Catalog Enquiry Pro</a>.', 'woocommerce-catalog-enquiry')),
+//             value: 'is_hide_cart_checkout'
+//         },
+//     ],
+//     database_value: [],
+// },
 //             {
 //                 key: 'disable_cart_page_link',
 //                 depend_checkbox: 'is_hide_cart_checkout',
@@ -10241,6 +10472,49 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./src/template/settings/quote.js":
+/*!****************************************!*\
+  !*** ./src/template/settings/quote.js ***!
+  \****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__);
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  id: 'quote',
+  priority: 4,
+  name: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Quote', 'woocommerce-catalog-enquiry'),
+  desc: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Configure basic store display settings to operate your catalog marketplace.', 'woocommerce-catalog-enquiry'),
+  icon: 'icon-general-tab',
+  submenu: 'settings',
+  submitUrl: 'save_enquiry',
+  proDependent: false,
+  modal: [{
+    key: 'woocommerce_catalog_enquiry_general_settings',
+    type: 'blocktext',
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('no_label', 'woocommerce-catalog-enquiry'),
+    blocktext: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Common Settings', 'woocommerce-catalog-enquiry')
+  }, {
+    key: 'is_enable',
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Catalog Mode', 'woocommerce-catalog-enquiry'),
+    class: 'mvx-toggle-checkbox',
+    type: 'checkbox',
+    options: [{
+      key: 'is_enable',
+      label: appLocalizer.catalog_mode_label,
+      value: 'is_enable'
+    }]
+  }]
+});
+
+/***/ }),
+
 /***/ "./src/template/settings/storeDisplaySettings.js":
 /*!*******************************************************!*\
   !*** ./src/template/settings/storeDisplaySettings.js ***!
@@ -10262,157 +10536,35 @@ __webpack_require__.r(__webpack_exports__);
   desc: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Configure basic store display settings to operate your catalog marketplace.', 'woocommerce-catalog-enquiry'),
   icon: 'icon-general-tab',
   submenu: 'settings',
-  apiurl: 'save_enquiry',
-  modulename: [{
-    key: 'woocommerce_catalog_enquiry_general_settings',
+  submitUrl: 'save_enquiry',
+  proDependent: true,
+  modal: [{
+    key: 'woocommerce_catalog_enquiry_product_gallery_page_setting',
     type: 'blocktext',
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('no_label', 'woocommerce-catalog-enquiry'),
-    blocktext: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Common Settings', 'woocommerce-catalog-enquiry')
-  }, {
-    key: 'is_enable',
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Catalog Mode', 'woocommerce-catalog-enquiry'),
-    class: 'mvx-toggle-checkbox',
-    type: 'checkbox',
-    options: [{
-      key: 'is_enable',
-      // label: apply_filters('woocommerce_catalog_enquiry_enable_catalog_text', __('Enable this to activate catalog mode sitewide. This will remove your Add to Cart button. To keep Add to Cart button in your site, upgrade to <a href="https://multivendorx.com/woocommerce-request-a-quote-product-catalog/" target="_blank">WooCommerce Catalog Enquiry Pro</a>.', 'woocommerce-catalog-enquiry')),
-      value: 'is_enable'
-    }],
-    database_value: []
-  }, {
-    key: 'is_enable_enquiry',
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Product Enquiry Button', 'woocommerce-catalog-enquiry'),
-    class: 'mvx-toggle-checkbox',
-    type: 'checkbox',
-    options: [{
-      key: 'is_enable_enquiry',
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Enable this to add the Enquiry button for all products. Use Exclusion settings to exclude specific product or category from enquiry.', 'woocommerce-catalog-enquiry'),
-      value: 'is_enable_enquiry'
-    }],
-    database_value: []
-  }, {
-    key: 'is_enable_out_of_stock',
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Product Enquiry Button When Product is Out Of Stock', 'woocommerce-catalog-enquiry'),
-    class: 'mvx-toggle-checkbox',
-    type: 'checkbox',
-    options: [{
-      key: 'is_enable_out_of_stock',
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Enable this to add the Enquiry button for the products which are out of stock. Use Exclusion settings to exclude specific product or category from enquiry.', 'woocommerce-catalog-enquiry'),
-      value: 'is_enable_out_of_stock'
-    }],
-    database_value: []
-  }, {
-    key: 'for_user_type',
-    type: 'select',
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Catalog Mode Applicable For', 'woocommerce-catalog-enquiry'),
-    desc: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Select the type users where this catalog is applicable', 'woocommerce-catalog-enquiry'),
-    options: [{
-      key: '1',
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Only Logged out Users', 'woocommerce-catalog-enquiry'),
-      value: '1'
-    }, {
-      key: '2',
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Only Logged in Users', 'woocommerce-catalog-enquiry'),
-      value: '2'
-    }, {
-      key: '3',
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('All Users', 'woocommerce-catalog-enquiry'),
-      value: '3'
-    }]
-  }, {
-    key: 'is_hide_cart_checkout',
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Disable Cart and Checkout Page?', 'woocommerce-catalog-enquiry'),
-    class: 'mvx-toggle-checkbox',
-    type: 'checkbox',
-    options: [{
-      key: 'is_hide_cart_checkout',
-      // label: apply_filters('woocommerce_catalog_enquiry_hide_cart', __('Enable this to redirect users to the home page if they click on the cart or checkout page. To set the redirection to another page, kindly upgrade to <a href="https://multivendorx.com/woocommerce-request-a-quote-product-catalog/" target="_blank">WooCommerce Catalog Enquiry Pro</a>.', 'woocommerce-catalog-enquiry')),
-      value: 'is_hide_cart_checkout'
-    }],
-    database_value: []
-  }, {
-    key: 'disable_cart_page_link',
-    depend_checkbox: 'is_hide_cart_checkout',
-    // disable: apply_filters('mvx_catalog_free_only_active', true),
-    type: 'select',
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Set Redirect Page', 'woocommerce-catalog-enquiry'),
-    // desc: apply_filters('woocommerce_catalog_redirect_disabled_cart_page', __('Select the page where users will be redirected for the disabled cart page. To use this feature, kindly upgrade to <a href="https://multivendorx.com/woocommerce-request-a-quote-product-catalog/" target="_blank">WooCommerce Catalog Enquiry Pro</a>.', 'woocommerce-catalog-enquiry')),
-    options: appLocalizer.all_pages
-  }, {
-    key: 'is_page_redirect',
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Redirect after Enquiry form Submission', 'woocommerce-catalog-enquiry'),
-    class: 'mvx-toggle-checkbox',
-    type: 'checkbox',
-    options: [{
-      key: 'is_page_redirect',
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Enable this to redirect users to another page after successful enquiry submission.', 'woocommerce-catalog-enquiry'),
-      value: 'is_page_redirect'
-    }],
-    database_value: []
-  }, {
-    key: 'redirect_page_id',
-    depend_checkbox: 'is_page_redirect',
-    type: 'select',
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Set Redirect Page', 'woocommerce-catalog-enquiry'),
-    desc: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Select the page where users will be redirected after successful enquiry.', 'woocommerce-catalog-enquiry'),
-    options: appLocalizer.all_pages
-  }, {
-    key: 'separator1_content',
-    type: 'section',
-    label: ''
-  }, {
-    key: 'woocommerce_catalog_enquiry_display_settings',
+    blocktext: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Product Gallery Page (Shop, Categoty etc)', 'woocommerce-catalog-enquiry')
+  },
+  // {
+  //     key: 'woocommerce_userroles_list',
+  //     type: 'multi-select',
+  //     label: __('User Role Specific Exclusion', 'woocommerce-catalog-enquiry'),
+  //     desc: __('Select the user roles, who won’t be able to send enquiry.', 'woocommerce-catalog-enquiry'),
+  //     // options: appLocalizer.all_roles,
+  // },
+  {
+    key: 'woocommerce_catalog_enquiry_product_gallery_page_setting',
     type: 'blocktext',
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('no_label', 'woocommerce-catalog-enquiry'),
-    blocktext: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Display Options', 'woocommerce-catalog-enquiry')
-  }, {
-    key: 'is_remove_price_free',
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Remove Product Price?', 'woocommerce-catalog-enquiry'),
-    class: 'mvx-toggle-checkbox',
-    type: 'checkbox',
-    options: [{
-      key: 'is_remove_price_free',
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Enable this option to remove the product price display from the site.', 'woocommerce-catalog-enquiry'),
-      value: 'is_remove_price_free'
-    }],
-    database_value: []
-  }, {
-    key: 'is_disable_popup',
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Disable Enquiry form via popup?', 'woocommerce-catalog-enquiry'),
-    class: 'mvx-toggle-checkbox',
-    type: 'checkbox',
-    options: [{
-      key: 'is_disable_popup',
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('By default, the form will be displayed via popup. Enable this if you want to display the form below the product description.', 'woocommerce-catalog-enquiry'),
-      value: 'is_disable_popup'
-    }],
-    database_value: []
-  }, {
-    key: 'separator2_content',
-    type: 'section',
-    label: ''
-  }, {
-    key: 'woocommerce_catalog_enquiry_email_settings',
-    type: 'blocktext',
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('no_label', 'woocommerce-catalog-enquiry'),
-    blocktext: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Enquiry Email Receivers Settings', 'woocommerce-catalog-enquiry')
-  }, {
-    key: 'other_emails',
-    type: 'text',
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Additional Recipients Emails', 'woocommerce-catalog-enquiry'),
-    desc: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Enter email addresses if you want to receive enquiry mail along with admin mail. You can add multiple comma-separated emails. Default: Admin emails.', 'woocommerce-catalog-enquiry')
-  }, {
-    key: 'is_other_admin_mail',
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Remove admin email', 'woocommerce-catalog-enquiry'),
-    class: 'mvx-toggle-checkbox',
-    type: 'checkbox',
-    options: [{
-      key: 'is_other_admin_mail',
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Enable this if you want to remove admin email from receiver list.', 'woocommerce-catalog-enquiry'),
-      value: 'is_other_admin_mail'
-    }],
-    database_value: []
-  }]
+    blocktext: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Product Page', 'woocommerce-catalog-enquiry')
+  }
+  // {
+  //     key: 'woocommerce_userroles_list',
+  //     type: 'multi-select',
+  //     label: __('User Role Specific Exclusion', 'woocommerce-catalog-enquiry'),
+  //     desc: __('Select the user roles, who won’t be able to send enquiry.', 'woocommerce-catalog-enquiry'),
+  //     // options: appLocalizer.all_roles,
+  // }
+  ]
 });
 
 /***/ }),
@@ -17624,9 +17776,11 @@ var index =  react__WEBPACK_IMPORTED_MODULE_0__.useLayoutEffect ;
 var map = {
 	"./buttonAppearance.js": "./src/template/settings/buttonAppearance.js",
 	"./catalog.js": "./src/template/settings/catalog.js",
+	"./enquiry.js": "./src/template/settings/enquiry.js",
 	"./enquiryform.js": "./src/template/settings/enquiryform.js",
 	"./exclusion.js": "./src/template/settings/exclusion.js",
 	"./general.js": "./src/template/settings/general.js",
+	"./quote.js": "./src/template/settings/quote.js",
 	"./storeDisplaySettings.js": "./src/template/settings/storeDisplaySettings.js"
 };
 

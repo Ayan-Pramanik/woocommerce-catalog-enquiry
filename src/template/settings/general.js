@@ -56,43 +56,43 @@
 //                 ],
 //                 database_value: []
 //             },
-//             {
-//                 key: 'for_user_type',
-//                 type: 'select',
-//                 label: __('Catalog Mode Applicable For', 'woocommerce-catalog-enquiry'),
-//                 desc: __('Select the type users where this catalog is applicable', 'woocommerce-catalog-enquiry'),
-//                 options: [
-//                     {
-//                         key: '1',
-//                         label: __('Only Logged out Users', 'woocommerce-catalog-enquiry'),
-//                         value: '1',
-//                     },
-//                     {
-//                         key: '2',
-//                         label: __('Only Logged in Users', 'woocommerce-catalog-enquiry'),
-//                         value: '2',
-//                     },
-//                     {
-//                         key: '3',
-//                         label: __('All Users', 'woocommerce-catalog-enquiry'),
-//                         value: '3',
-//                     }
-//                 ],
-//             },
-//             {
-//                 key: 'is_hide_cart_checkout',
-//                 label: __('Disable Cart and Checkout Page?', 'woocommerce-catalog-enquiry'),
-//                 class: 'mvx-toggle-checkbox',
-//                 type: 'checkbox',
-//                 options: [
-//                     {
-//                         key: 'is_hide_cart_checkout',
-//                         // label: apply_filters('woocommerce_catalog_enquiry_hide_cart', __('Enable this to redirect users to the home page if they click on the cart or checkout page. To set the redirection to another page, kindly upgrade to <a href="https://multivendorx.com/woocommerce-request-a-quote-product-catalog/" target="_blank">WooCommerce Catalog Enquiry Pro</a>.', 'woocommerce-catalog-enquiry')),
-//                         value: 'is_hide_cart_checkout'
-//                     },
-//                 ],
-//                 database_value: [],
-//             },
+            // {
+            //     key: 'for_user_type',
+            //     type: 'select',
+            //     label: __('Catalog Mode Applicable For', 'woocommerce-catalog-enquiry'),
+            //     desc: __('Select the type users where this catalog is applicable', 'woocommerce-catalog-enquiry'),
+            //     options: [
+            //         {
+            //             key: '1',
+            //             label: __('Only Logged out Users', 'woocommerce-catalog-enquiry'),
+            //             value: '1',
+            //         },
+            //         {
+            //             key: '2',
+            //             label: __('Only Logged in Users', 'woocommerce-catalog-enquiry'),
+            //             value: '2',
+            //         },
+            //         {
+            //             key: '3',
+            //             label: __('All Users', 'woocommerce-catalog-enquiry'),
+            //             value: '3',
+            //         }
+            //     ],
+            // },
+            // {
+            //     key: 'is_hide_cart_checkout',
+            //     label: __('Disable Cart and Checkout Page?', 'woocommerce-catalog-enquiry'),
+            //     class: 'mvx-toggle-checkbox',
+            //     type: 'checkbox',
+            //     options: [
+            //         {
+            //             key: 'is_hide_cart_checkout',
+            //             // label: apply_filters('woocommerce_catalog_enquiry_hide_cart', __('Enable this to redirect users to the home page if they click on the cart or checkout page. To set the redirection to another page, kindly upgrade to <a href="https://multivendorx.com/woocommerce-request-a-quote-product-catalog/" target="_blank">WooCommerce Catalog Enquiry Pro</a>.', 'woocommerce-catalog-enquiry')),
+            //             value: 'is_hide_cart_checkout'
+            //         },
+            //     ],
+            //     database_value: [],
+            // },
 //             {
 //                 key: 'disable_cart_page_link',
 //                 depend_checkbox: 'is_hide_cart_checkout',

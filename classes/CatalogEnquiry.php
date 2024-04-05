@@ -44,6 +44,10 @@ class CatalogEnquiry {
         add_action( 'before_woocommerce_init', [ $this, 'declare_compatibility' ] );
         add_action( 'woocommerce_loaded', [ $this, 'init_plugin' ] );
         add_action( 'plugins_loaded', [ $this, 'is_woocommerce_loaded' ] );
+
+        
+        // update_option('active_modules',serialize([]));
+        // add_option('active_modules', serialize([]));
     }
 
     /**
@@ -59,7 +63,7 @@ class CatalogEnquiry {
 	}
 
     public function activate() {
-        register_activation_hook($this->file, ['Utill', 'migration_from_previous']);
+        $this->container[ 'install' ]  = new Install();
     }
 
     public function deactivate() {
@@ -77,6 +81,8 @@ class CatalogEnquiry {
     public function init_plugin () {
         $this->load_plugin_textdomain();
         $this->init_classes();
+        
+        do_action( 'catalog_enquiry_loaded' );
     }
 
     /**
@@ -124,6 +130,7 @@ class CatalogEnquiry {
         $this->container[ 'restapi' ]   = new RestAPI();
         $this->container[ 'template' ]   = new Template();
         $this->container[ 'utill']       = new Utill();
+        $this->container[ 'modules' ] = new Modules();
     }
     /**
      * Take action based on if woocommerce is not loaded

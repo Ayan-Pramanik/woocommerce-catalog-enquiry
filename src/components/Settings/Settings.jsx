@@ -3,7 +3,7 @@
 import { useLocation } from "react-router-dom";
 import DynamicForm from "../AdminLibrary/DynamicForm/DynamicForm";
 import Tabs from '../AdminLibrary/Tabs/Tabs';
-// import BannerSection from '../Banner/banner';
+// import BannerSection from '../Banner/Banner';
 
 // import context
 import { SettingProvider, useSetting } from "../../contexts/SettingContext";
@@ -29,9 +29,9 @@ const Settings = () => {
         const { setting, settingName, setSetting } = useSetting();
         const settingModal = getSettingById( settingsArray, currentTab );
         
-        console.log(settingsArray)
-        console.log(currentTab)
-        console.log(settingModal)
+        // console.log(settingsArray)
+        // console.log(currentTab)
+        // console.log(settingModal)
 
         // if ( settingName != currentTab ) {
         //     setSetting( currentTab, appLocalizer.settings_databases_value[currentTab] );
@@ -43,7 +43,7 @@ const Settings = () => {
 
         return (
             <>
-                { settingName === currentTab ? <DynamicForm setting={ settingModal } proSetting={appLocalizer.pro_settings_list} /> : <>Loading</> }
+                { <DynamicForm setting={ settingModal } proSetting={appLocalizer.pro_settings_list} /> }
             </>
         );
     }

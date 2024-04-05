@@ -2,6 +2,7 @@ import React from 'react';
 import { useLocation } from 'react-router-dom';
 
 import Settings from './components/Settings/Settings';
+import Modules from './components/Modules/Modules';
 
 const App = () => {
     const currentUrl = window.location.href;
@@ -16,6 +17,7 @@ const App = () => {
     return (
         <>
             { location.get('tab') === 'settings' && <Settings initialTab='storeDisplay' /> }
+            { location.get('tab') === 'modules' && <Modules /> }
         </>
     );
 }

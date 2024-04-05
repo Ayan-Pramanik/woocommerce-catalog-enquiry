@@ -26,9 +26,6 @@ CE();
 // if(!defined('ABSPATH')) exit; // Exit if accessed directly
 // if(!defined('WOOCOMMERCE_CATALOG_ENQUIRY_PLUGIN_TOKEN')) exit;
 // if(!defined('WOOCOMMERCE_CATALOG_ENQUIRY_TEXT_DOMAIN')) exit;
-// if(!Woocommerce_Catalog_Enquiry_Dependencies::woocommerce_active_check()) {
-//   add_action( 'admin_notices', 'woocommerce_catalog_enquiry_alert_notice' );
-// }
 // /* Plugin activation hook */
 // register_activation_hook(__FILE__, 'migration_from_previous');
 // /**

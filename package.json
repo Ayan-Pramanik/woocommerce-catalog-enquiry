@@ -39,6 +39,7 @@
 		"@emotion/react": "^11.10.5",
 		"@emotion/styled": "^11.10.5",
 		"@mui/material": "^5.11.3",
+		"@wordpress/i18n": "^4.55.0",
 		"react-router-dom": "^6.4.4",
 		"react-select": "^5.7.0",
 		"react-sortablejs": "^6.1.4",

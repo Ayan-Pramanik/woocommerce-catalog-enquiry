@@ -26,6 +26,12 @@ class RestAPI{
             'callback' => array( $this, 'mvx_catalog_save_enquiry' ),
             'permission_callback' => array( $this, 'catalog_permission' )
         ] );
+
+        register_rest_route ( 'mvx_catalog/v1', '/activate_module', [ 
+            'methods'               => 'POST',
+            'callback'              => [ $this, 'activate_module' ],
+            'permission_callback'   => array( $this, 'catalog_permission' )
+        ]);
     }
 
     /**
@@ -52,4 +58,13 @@ class RestAPI{
         return $all_details;
         die;
 	}
+
+    public function activate_module($request) {
+        $module [] = $request['module_id'];
+        if ( $request['value'] ){
+            CE()->modules->activate_modules($module);
+        } else {
+            CE()->modules->deactivate_modules($module);
+        }
+    }
 }

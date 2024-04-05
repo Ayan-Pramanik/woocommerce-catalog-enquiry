@@ -13,7 +13,7 @@ import TextArea from './TextArea.jsx';
 import ToggleRectangle from './ToggleRectangle.jsx';
 
 // Util component import
-// import BlockText from './Util/BlockText.jsx';
+import BlockText from './Util/BlockText.jsx';
 // import GoogleMap from './Util/GoogleMap.jsx';
 // import Label from './Util/Label.jsx';
 // import Section from './Util/Section.jsx';
@@ -35,7 +35,7 @@ export default {
     SelectInput,
     TextArea,
     ToggleRectangle,
-    // BlockText,
+    BlockText,
     // GoogleMap,
     // Label,
     // Section,

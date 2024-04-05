@@ -14,13 +14,13 @@
 //             label: __('no_label', 'woocommerce-catalog-enquiry'),
 //             blocktext: __('Exclusion Management', 'woocommerce-catalog-enquiry'),
 //         },
-//         {
-//             key: 'woocommerce_userroles_list',
-//             type: 'multi-select',
-//             label: __('User Role Specific Exclusion', 'woocommerce-catalog-enquiry'),
-//             desc: __('Select the user roles, who won’t be able to send enquiry.', 'woocommerce-catalog-enquiry'),
-//             options: appLocalizer.all_roles, 
-//         },
+        // {
+        //     key: 'woocommerce_userroles_list',
+        //     type: 'multi-select',
+        //     label: __('User Role Specific Exclusion', 'woocommerce-catalog-enquiry'),
+        //     desc: __('Select the user roles, who won’t be able to send enquiry.', 'woocommerce-catalog-enquiry'),
+        //     options: appLocalizer.all_roles, 
+        // },
 //         {
 //             key: 'woocommerce_user_list',
 //             type: 'multi-select',

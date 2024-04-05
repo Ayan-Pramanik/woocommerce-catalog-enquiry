@@ -52,7 +52,7 @@ class Admin {
             __( 'Settings', 'woocommerce-catalog-enquiry' ),
             __( 'Settings', 'woocommerce-catalog-enquiry' ),
             'manage_woocommerce',
-            'catalog#&tab=settings&subtab=general',
+            'catalog#&tab=settings&subtab=storeDisplay',
             '__return_null'
         );
 
@@ -199,9 +199,12 @@ class Admin {
             'all_roles' => $this->get_all_roles(),
             'all_products' => $this->get_all_products(),
             'all_category' => $this->get_all_category(),
+            'active_modules' => CE()->modules->get_active_modules(),
             'banner_img'  => CE()->plugin_url . 'assets/images/catalog-pro-add-admin-banner.jpg',
             'settings_page_string'  =>  $settings_page_string,
-            'pro_active'    =>  apply_filters('mvx_catalog_free_only_active', true)
+            'pro_active'    =>  apply_filters('mvx_catalog_free_only_active', 'free'),
+            'disable_cart_label' => apply_filters('woocommerce_catalog_enquiry_hide_cart', __('Enable this to redirect users to the home page if they click on the cart or checkout page. To set the redirection to another page, kindly upgrade to <a href="https://multivendorx.com/woocommerce-request-a-quote-product-catalog/" target="_blank">WooCommerce Catalog Enquiry Pro</a>.', 'woocommerce-catalog-enquiry')),
+
         ] ) );
         }
     }
